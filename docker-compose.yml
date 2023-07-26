@@ -1,0 +1,13 @@
+version: '2'
+services:
+  task-processing-server:
+    container_name: task-processing-server
+    build: ./
+    image: task-processing-server:latest
+    ports:
+      - "8080:8080"
+    networks:
+      - processing-network
+networks:
+  processing-network:
+    driver: bridge
